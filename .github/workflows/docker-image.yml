@@ -1,0 +1,29 @@
+name: Flask CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+    
+env:
+  DOCKER_IMAGE_NAME: flask_gunicorn
+  DOCKER_IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build -t ${{ env.DOCKER_IMAGE_NAME }} .
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+    - name: Manual deployment
+      run: docker-compose up --build -d

@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  flask-gunicorn:
+    image: ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
+    container_name: ${DOCKER_IMAGE_NAME}
+    ports:
+      - "5555:5555"
