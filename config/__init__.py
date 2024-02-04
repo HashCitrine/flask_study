@@ -3,7 +3,7 @@ from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 
 from route.exception import bp as exception_bp
-from route.test import bp as test_bp
+from route.tutorial import bp as tutorial_bp
 
 
 db = SQLAlchemy()
@@ -24,7 +24,7 @@ def init_flask() -> Flask:
         db.create_all()
 
         flask.register_blueprint(exception_bp)
-        flask.register_blueprint(test_bp)
+        flask.register_blueprint(tutorial_bp)
         flask.register_blueprint(user_bp)
 
     return flask

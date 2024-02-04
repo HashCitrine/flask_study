@@ -2,7 +2,7 @@ import os
 
 from flask import Blueprint, Response, send_from_directory
 
-bp = Blueprint('test', __name__)
+bp = Blueprint('tutorial', __name__)
 
 
 @bp.route('/', methods=['GET'])
