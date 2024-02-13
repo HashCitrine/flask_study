@@ -1,4 +1,3 @@
-from flask import Response
 from flask_cors import CORS
 
 from config import init_flask
