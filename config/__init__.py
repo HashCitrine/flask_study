@@ -2,8 +2,8 @@ from flask import Flask
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 
-from route.exception import bp as exception_bp
-from route.tutorial import bp as tutorial_bp
+from controller import bp as exception_bp
+from controller.tutorial_controller import bp as tutorial_bp
 
 
 db = SQLAlchemy()
@@ -18,7 +18,7 @@ def init_flask() -> Flask:
     ma.init_app(flask)
 
     with flask.app_context():
-        from route.user import bp as user_bp
+        from controller.user_controller import bp as user_bp
 
         # db.drop_all()
         db.create_all()

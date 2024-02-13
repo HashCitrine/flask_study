@@ -3,7 +3,7 @@ from flask import Blueprint
 from dto.response import ResponseEntity as Res
 import json
 
-bp = Blueprint('exception', __name__)
+bp = Blueprint('controller', __name__)
 
 
 @bp.app_errorhandler(Exception)
