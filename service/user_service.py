@@ -1,11 +1,13 @@
 from flask import request
 
 from config import db
-from entity.user import UserModel, UserSchema
+from model.user_model import UserModel, UserSchema
+from decorator.log import service_log
 
 user_schema = UserSchema()
 
 
+@service_log
 def create_user(json) -> UserModel:
     user = user_schema.load(json)
     db.session.add(user)
@@ -14,18 +16,21 @@ def create_user(json) -> UserModel:
     return user
 
 
+@service_log
 def get_users() -> list[UserModel]:
     users = UserModel.query.all()
 
     return users
 
 
+@service_log
 def get_user(user_id: int) -> list[UserModel]:
     users = UserModel.query.filter(UserModel.id == user_id)
 
     return users
 
 
+@service_log
 def update_user(user_id: int) -> UserModel:
     updated_user = user_schema.load(request.json)
 

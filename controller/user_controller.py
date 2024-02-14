@@ -3,7 +3,7 @@ import json
 from flask import Blueprint, Response, request
 
 from dto.response import ResponseEntity as Res
-from entity.user import UserSchema
+from model.user_model import UserSchema
 from service import user_service
 
 bp = Blueprint('user', __name__)
