@@ -4,6 +4,7 @@
 - [x] Flask
 - [x] SQLAlchemy 
 - [x] WSGI(Gunicorn)
-- [ ] Package Refactoring(Repository, Service, Controller)
-- [ ] Logger
+- [x] Logger
+- [ ] Log File Rotation
+- [ ] Package Refactoring(MVC)
 - [ ] ASGI(Uvicorn, Async)
