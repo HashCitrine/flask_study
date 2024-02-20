@@ -10,7 +10,7 @@
 - [ ] ASGI(Uvicorn, Async)
 
 ## Flask
-![flask](https://flask.palletsprojects.com/en/3.0.x/_images/flask-horizontal.png)
+![flask](https://flask.palletsprojects.com/en/3.0.x/_images/flask-horizontal.png)  
 Python Micro Web Framework  
 가벼운 API 서버로 구성하기 위해 이용
 
