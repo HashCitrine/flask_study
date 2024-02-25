@@ -1,4 +1,4 @@
-name: Flask Docker Image Build
+name: Flask Deploy
 
 on:
   workflow_dispatch:
