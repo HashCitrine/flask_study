@@ -1,0 +1,22 @@
+name: Flask Docker Image Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        description: 'Docker Image Build Workflow Run ID'
+        required: true
+
+env:
+  DOCKER_IMAGE_NAME: flask_gunicorn
+  DOCKER_IMAGE_TAG: ${{ github.event.inputs.build_id }}
+
+jobs:
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+    - name: Manual deployment
+      run: docker-compose up --build -d
